@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <!-- Meta tags anti-caché para que siempre se cargue la versión más reciente -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
+
   <title>QR ICE</title>
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -25,7 +29,7 @@
       text-align: center;
     }
 
-    img {
+    img.foto {
       width: 120px;
       height: 120px;
       border-radius: 50%;
@@ -54,6 +58,11 @@
       font-size: 10px;
       opacity: 0.4;
     }
+
+    #qrcode {
+      margin-top: 12px;
+      display: inline-block;
+    }
   </style>
 </head>
 
@@ -61,42 +70,42 @@
 
   <div class="card">
     <!-- FOTO -->
-    <img src="foto.jpg" alt="Foto de identificacion">
+    <img class="foto" src="foto.jpg" alt="Foto de identificacion">
 
     <!-- DATOS -->
     <h2>Karol Alejandra Marquez</h2>
-    <p><strong>Esta persona tiene alzheimer
-      Por favor ayudala a volver a casa</strong></p>
+    <p><strong>Esta persona tiene Alzheimer. Por favor ayúdala a volver a casa</strong></p>
     <p><strong>Edad:</strong> 40 años</p>
-    <p><strong>Grupo sanguineo:</strong> A+</p>
+    <p><strong>Grupo sanguíneo:</strong> A+</p>
     <p><strong>Contacto de emergencia:</strong><br>
        Kamila – 313-205-4808
     </p>
-<div id="qrcode"></div> <!-- Aquí se genera el QR -->
 
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-<script>
-  // URL de tu página ICE (puede ser la misma página)
-  var enlaceICE = "https://alejamaequez6323-max.github.io/Ice/";
+    <h3>Escanea este código para ver mis datos de emergencia:</h3>
+    <!-- QR dinámico -->
+    <div id="qrcode"></div>
 
-  // Generar QR dinámicamente
-  new QRCode(document.getElementById("qrcode"), {
-    text: enlaceICE,
-    width: 200,
-    height: 200,
-    colorDark: "#000000", // color negro de los cuadros
-    colorLight: "#ffffff", // fondo blanco
-    correctLevel: QRCode.CorrectLevel.H
-  });
-</script>
-    <!-- FIRMA / AUTORIA -->
+    <!-- FIRMA / AUTORÍA -->
+    <p class="ice">ICE – In Case of Emergency</p>
     <div class="firma">AuthID: AM-ICE</div>
   </div>
 
+  <!-- Librería QR y script -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    // URL de tu página ICE en GitHub Pages
+    var enlaceICE = "https://alejamaequez6323-max.github.io/Ice/";
+
+    // Generar QR dinámicamente
+    new QRCode(document.getElementById("qrcode"), {
+      text: enlaceICE,
+      width: 220,
+      height: 220,
+      colorDark: "#000000", // color negro de los cuadros
+      colorLight: "#ffffff", // fondo blanco
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+
 </body>
 </html>
-
-
-
-
-
