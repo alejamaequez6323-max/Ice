@@ -72,16 +72,30 @@
     <p><strong>Contacto de emergencia:</strong><br>
        Kamila – 313-205-4808
     </p>
-    <h3>Escanea este código para ver mis datos de emergencia:</h3>
-      <img src="qr.png" alt="Código QR ICE" width="200">
-    <p class="ice">ICE – In Case of Emergency</p>
+<div id="qrcode"></div> <!-- Aquí se genera el QR -->
 
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+<script>
+  // URL de tu página ICE (puede ser la misma página)
+  var enlaceICE = "https://alejamaequez6323-max.github.io/Ice/";
+
+  // Generar QR dinámicamente
+  new QRCode(document.getElementById("qrcode"), {
+    text: enlaceICE,
+    width: 200,
+    height: 200,
+    colorDark: "#000000", // color negro de los cuadros
+    colorLight: "#ffffff", // fondo blanco
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
     <!-- FIRMA / AUTORIA -->
     <div class="firma">AuthID: AM-ICE</div>
   </div>
 
 </body>
 </html>
+
 
 
 
